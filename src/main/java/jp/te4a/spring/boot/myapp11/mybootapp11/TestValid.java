@@ -6,12 +6,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+
 @Documented
 @Constraint(validatedBy = TestValidator.class)
 @Target({ElementType.METHOD,ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface TestValid {
-    String param();
+ String param();
  String message() default "input other than {param}.";
  // Classオブジェクトを得る（戻り値とする）メソッドgroups()
  // デフォルト値は空のクラス

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
     <meta charset="UTF-8" />
     <title>書籍登録一覧画面</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
   </head>
   <body>
     <form th:action="@{/books/create}" th:object="${bookForm}" method="post">
@@ -27,7 +27,7 @@
         </table>
         <input type="submit" value="作成" />
        </form>
-    <hr />
+
     <table>
         <tr th:each="book : ${books}">
           <td th:text="${book.id}">100</td>

@@ -26,15 +26,14 @@ public class BookController {
     model.addAttribute("books", bookService.findAll());
     return "books/list";
   }
- @PostMapping(path="create")
- String create(@Validated BookForm form, BindingResult result , Model model) {
- if(result.hasErrors()) {
- return list(model);
- }
- bookService.save(form);
- return "redirect:/books";
-}
-
+  @PostMapping(path="create")
+  String create(@Validated BookForm form, BindingResult result , Model model) {
+   if(result.hasErrors()) {
+   return list(model);
+   }
+   bookService.save(form);
+   return "redirect:/books";
+  }
   @PostMapping(path = "edit", params = "form")
   String editForm(@RequestParam Integer id, BookForm form) {
     BookForm bookForm = bookService.findOne(id);

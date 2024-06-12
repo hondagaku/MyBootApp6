@@ -1,10 +1,12 @@
 package jp.te4a.spring.boot.myapp11.mybootapp11;
 
+import jakarta.annotation.Nonnull;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.annotation.Nonnull;
-import jakarta.validation.Constraints.Size;
+
 
 @Data
 @NoArgsConstructor
