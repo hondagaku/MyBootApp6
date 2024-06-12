@@ -17,6 +17,12 @@ public class BookService {
     bookRepository.save(bookBean);
     return bookForm;
   }
+  public BookForm save(BookForm bookForm) {
+    BookBean bookBean = new BookBean();
+    BeanUtils.copyProperties(bookForm, bookBean);
+    bookRepository.save(bookBean);
+    return bookForm;
+   }
   
   public BookForm update(BookForm bookForm) {
     BookBean bookBean = new BookBean();
