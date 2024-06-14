@@ -9,11 +9,12 @@ import java.lang.annotation.Target;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
+public class TestValid{
 @Documented
 @Constraint(validatedBy = TestValidator.class)
 @Target({ElementType.METHOD,ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TestValid {
+public @interface Valid {
  String param();
  String message() default "input other than {param}.";
  // Classオブジェクトを得る（戻り値とする）メソッドgroups()
@@ -22,4 +23,10 @@ public @interface TestValid {
  // Payloadクラスを継承したClassオブジェクトを得る
  // （戻り値とする）メソッドpayload()、デフォルト値は空のクラス
  Class<? extends Payload>[] payload() default{};
+}
+
+public String param() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'param'");
+}
 }

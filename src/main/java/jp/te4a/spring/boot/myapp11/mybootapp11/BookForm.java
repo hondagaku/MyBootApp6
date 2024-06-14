@@ -2,7 +2,9 @@ package jp.te4a.spring.boot.myapp11.mybootapp11;
 
 import jakarta.annotation.*;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jp.te4a.spring.boot.myapp11.mybootapp11.TestValid.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,9 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BookForm {
 private Integer id ;
- @Nonnull
+ @NotNull
  @Size(min = 3)
- @TestValid(param="abc")
+ @Valid(param="abc")
  private String title;
  @Size(min = 3, max = 20)
  private String writter;

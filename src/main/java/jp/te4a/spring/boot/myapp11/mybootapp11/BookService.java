@@ -17,13 +17,7 @@ public class BookService {
     bookRepository.save(bookBean);
     return bookForm;
   }
-  
-  public BookForm save(BookForm bookForm) {
-    BookBean bookBean = new BookBean();
-    BeanUtils.copyProperties(bookForm, bookBean);
-    bookRepository.save(bookBean);
-    return bookForm;
-   }
+
   
   public BookForm update(BookForm bookForm) {
     BookBean bookBean = new BookBean();
@@ -44,13 +38,11 @@ public class BookService {
    return formList;
    }
  public BookForm findOne(Integer id) {
-   Optional<BookBean> bookBean = findById(id);
+   Optional<BookBean> bookBean = bookRepository.findById(id);
    BookForm bookForm = new BookForm();
+   bookBean.ifPresent(book ->{
    BeanUtils.copyProperties(bookBean, bookForm);
+   });
    return bookForm;
  }
-
-public Optional<BookBean> findById(Integer id) {
-  return bookRepository.findById(id);
-}
 }
