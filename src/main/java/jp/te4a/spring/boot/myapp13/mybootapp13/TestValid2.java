@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp11.mybootapp11;
+package jp.te4a.spring.boot.myapp13.mybootapp13;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,14 +9,14 @@ import java.lang.annotation.Target;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
-public class TestValid{
+public class TestValid2{
 @Documented
-@Constraint(validatedBy = TestValidator.class)
+@Constraint(validatedBy = TestValidator2.class)
 @Target({ElementType.METHOD,ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Valid {
- String param();
- String message() default "input other than {param}.";
+public @interface Writter {
+ String ok();
+ String message() default "input other than {ok}.";
  // Classオブジェクトを得る（戻り値とする）メソッドgroups()
  // デフォルト値は空のクラス
  Class<?>[] groups() default {};
@@ -24,9 +24,4 @@ public @interface Valid {
  // （戻り値とする）メソッドpayload()、デフォルト値は空のクラス
  Class<? extends Payload>[] payload() default{};
 }
-
-//public String param() {
-    // TODO Auto-generated method stub
-    //throw new UnsupportedOperationException("Unimplemented method 'param'");
-//}
 }

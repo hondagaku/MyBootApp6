@@ -1,8 +1,8 @@
-package jp.te4a.spring.boot.myapp11.mybootapp11;
+package jp.te4a.spring.boot.myapp13.mybootapp13;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import jp.te4a.spring.boot.myapp11.mybootapp11.TestValid2.Writter;
+import jp.te4a.spring.boot.myapp13.mybootapp13.TestValid2.Writter;
 
 public class TestValidator2 implements ConstraintValidator<Writter,String>{
     String ok;
