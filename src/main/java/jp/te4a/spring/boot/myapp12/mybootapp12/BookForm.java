@@ -1,11 +1,11 @@
-package jp.te4a.spring.boot.myapp11.mybootapp11;
+package jp.te4a.spring.boot.myapp12.mybootapp12;
 
 import jakarta.annotation.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import jp.te4a.spring.boot.myapp11.mybootapp11.TestValid.Valid;
-import jp.te4a.spring.boot.myapp11.mybootapp11.TestValid2.Writter;
+import jp.te4a.spring.boot.myapp12.mybootapp12.TestValid.Valid;
+import jp.te4a.spring.boot.myapp12.mybootapp12.TestValid2.Writter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
