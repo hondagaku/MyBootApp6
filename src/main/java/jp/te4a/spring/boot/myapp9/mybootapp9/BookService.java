@@ -42,14 +42,13 @@ public class BookService {
    }
    return formList;
    }
- public BookForm findOne(Integer id) {
-   Optional<BookBean> bookBean = findById(id);
-   BookForm bookForm = new BookForm();
-   BeanUtils.copyProperties(bookBean, bookForm);
-   return bookForm;
- }
 
-public Optional<BookBean> findById(Integer id) {
-  return bookRepository.findById(id);
+public BookForm findOne(Integer id) {
+  Optional<BookBean> bookBean = bookRepository.findById(id);
+  BookForm bookForm = new BookForm();
+  bookBean.ifPresent(book ->{
+  BeanUtils.copyProperties(bookBean, bookForm);
+  });
+  return bookForm;
 }
 }
