@@ -11,22 +11,17 @@ import jakarta.validation.Payload;
 
 public class TestValid2{
 @Documented
-@Constraint(validatedBy = TestValidator.class)
+@Constraint(validatedBy = TestValidator2.class)
 @Target({ElementType.METHOD,ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Valid {
- String param();
- String message() default "input other than {param}.";
+public @interface Writter {
+ String ok();
+ String message() default "input other than {ok}.";
  // Classオブジェクトを得る（戻り値とする）メソッドgroups()
  // デフォルト値は空のクラス
  Class<?>[] groups() default {};
  // Payloadクラスを継承したClassオブジェクトを得る
  // （戻り値とする）メソッドpayload()、デフォルト値は空のクラス
  Class<? extends Payload>[] payload() default{};
-}
-
-public String param() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'param'");
 }
 }

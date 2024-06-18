@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jp.te4a.spring.boot.myapp11.mybootapp11.TestValid.Valid;
+import jp.te4a.spring.boot.myapp11.mybootapp11.TestValid2.Writter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,7 @@ private Integer id ;
  @Valid(param="abc")
  private String title;
  @Size(min = 3, max = 20)
- @Writter(ok="東北タロウ")
+ @Writter(ok = "東北タロウ")
  private String writter;
  private String publisher;
  @Min(0)
